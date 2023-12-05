@@ -9,5 +9,11 @@ public class ResetPassReponse
         this.message = message;
     }
 
+    public ResetPassReponse(bool status)
+    {
+      this.status = status;
+    }
+
     public string message;
+    public bool status;
 }
