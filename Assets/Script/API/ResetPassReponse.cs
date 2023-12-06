@@ -6,8 +6,9 @@ public class ResetPassReponse
 {
     public ResetPassReponse(string message)
     {
-        this.message = message;
+      this.message = message;
     }
 
     public string message;
+    
 }

@@ -53,6 +53,8 @@ public class LoginScripts : MonoBehaviour
             var jsonString = request.downloadHandler.text.ToString();
       //chuyển đổi kiểu Json thành một đối tượng C#
             LoginResponse loginReponse = JsonConvert.DeserializeObject<LoginResponse>(jsonString);
+      //Debug.Log(loginReponse.ToString());
+      Debug.Log(loginReponse.listDetailCard[0].name);
       if (loginReponse.error == "Xảy ra lỗi khi đăng nhập")
       {
         //tài khoản không đúng
