@@ -19,7 +19,7 @@ public class BasicShooter : MonoBehaviour
 
     //private GameObject target;
 
-    public int health = 4;
+    public int health;
 
   public bool is2dau;
 

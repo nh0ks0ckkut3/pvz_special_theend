@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class footballZombie : MonoBehaviour
 {
-  private int damagePerSecond = 50;
+ 
   public float speed;
+  private float speedCool;
+  private float speedStart;
   public int health;
   public int damage;
   public float eatCooldown;
@@ -17,7 +19,7 @@ public class footballZombie : MonoBehaviour
   private Vector3 vector3;
   private bool canEat = true;
   public Plant targetPlant;
-
+  private Renderer ren;
   private Animator zombieAnimator;// Tham chiếu tới Animator của zombie
   private int MaxHealth;
   void Start()
@@ -25,7 +27,9 @@ public class footballZombie : MonoBehaviour
     MaxHealth = health;
     gameManager = game_manager.instance;
     zombieAnimator = GetComponent<Animator>();
-
+    speedCool = 0.6f * speed;
+    speedStart = speed;
+    ren = GetComponent<Renderer>();
     //StartCoroutine(ApplyDamageOverTime());
     if (gameManager.isRoofMap)
     {
@@ -87,6 +91,15 @@ public class footballZombie : MonoBehaviour
       Destroy(collision.gameObject);
       health--;
     }
+    if(collision.CompareTag("bullet_cold"))
+    {
+      gameManager.sound_bullet.Play();
+      Destroy(collision.gameObject);
+      health--;
+      Invoke("khoiphuctrangthai", 5f);
+      speed = speedCool;
+      ren.material.color= Color.blue;
+    }
     if (collision.CompareTag("LawnMower"))
     {
       LawnMowers lawnMowersComponent = collision.gameObject.GetComponent<LawnMowers>();
@@ -100,11 +113,12 @@ public class footballZombie : MonoBehaviour
         // Sau đó, hủy GameObject hiện tại
 
 
-        //gameManager.sound_die.Play();
-        //zombieAnimator.SetInteger("normalZombie_status", 10);
-        //Destroy(gameObject, 1.2f);
+        
       }
-      Destroy(gameObject);
+      gameManager.sound_die.Play();
+      zombieAnimator.SetInteger("status", 10);
+      Destroy(gameObject, 1.2f);
+      //stroy(gameObject);
     }
     if (collision.CompareTag("GameOver"))
     {
@@ -114,6 +128,10 @@ public class footballZombie : MonoBehaviour
   private void OnTriggerStay2D(Collider2D collision)
   {
     if (collision.CompareTag("plant"))
+    {
+      targetPlant = collision.GetComponent<Plant>();
+      Eat();
+    }if (collision.CompareTag("LawnMower"))
     {
       targetPlant = collision.GetComponent<Plant>();
       Eat();
@@ -143,7 +161,11 @@ public class footballZombie : MonoBehaviour
   {
     canEat = true;
   }
-
+  void khoiphuctrangthai()
+  {
+    speed = speedStart;
+    ren.material.color= Color.white;
+  }
   //private IEnumerator ApplyDamageOverTime()
   //{
   //    while (true)

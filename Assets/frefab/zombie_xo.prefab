@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6182850912948673543}
   - component: {fileID: -3620627739218718155}
   - component: {fileID: 7308075433833614239}
-  - component: {fileID: -6586984493910503459}
+  - component: {fileID: 1353920205596800456}
   m_Layer: 0
   m_Name: zombie_xo
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.4399996, y: 8.021958}
+  m_Size: {x: 1.3833333, y: 1.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,7 +126,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.2769231, y: 1.1076924}
-    newSize: {x: 7.4399996, y: 8.021958}
+    newSize: {x: 1.3833333, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -150,6 +150,7 @@ MonoBehaviour:
   health: 4
   damage: 3
   eatCooldown: 1
+  gameover: {fileID: 0}
   targetPlant: {fileID: 0}
 --- !u!50 &-3620627739218718155
 Rigidbody2D:
@@ -199,7 +200,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-6586984493910503459
+--- !u!114 &1353920205596800456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,11 +209,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4109030094381986060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63f951370178849aa6b96397fd7ad8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c03fad5d5c790343807d353ecbe7191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
-  health: 8
-  damage: 2
-  eatCooldown: 2
+  speed: 1
+  health: 1555
+  damage: 1
+  eatCooldown: 1
   targetPlant: {fileID: 0}

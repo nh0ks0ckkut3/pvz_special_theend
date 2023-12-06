@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class duckyZombie : MonoBehaviour
 {
-  private int damagePerSecond = 50;
+  
   public float speed;
+  private float speedCool;
+  private float speedStart;
+  private Renderer ren;
   public int health;
   public int damage;
   public float eatCooldown;
@@ -22,7 +25,9 @@ public class duckyZombie : MonoBehaviour
   {
     gameManager = game_manager.instance;
     zombieAnimator = GetComponent<Animator>();
-
+    ren = GetComponent<Renderer>();
+    speedCool = 0.6f * speed;
+    speedStart = speed;
     //StartCoroutine(ApplyDamageOverTime());
     if (gameManager.isRoofMap)
     {
@@ -79,6 +84,15 @@ public class duckyZombie : MonoBehaviour
       Destroy(collision.gameObject);
       health--;
     }
+    if (collision.CompareTag("bullet_cold"))
+    {
+      gameManager.sound_bullet.Play();
+      Destroy(collision.gameObject);
+      health--;
+      Invoke("khoiphuctrangthai", 5f);
+      speed = speedCool;
+      ren.material.color = Color.blue;
+    }
     if (collision.CompareTag("LawnMower"))
     {
       LawnMowers lawnMowersComponent = collision.gameObject.GetComponent<LawnMowers>();
@@ -130,6 +144,11 @@ public class duckyZombie : MonoBehaviour
   void ResetEatCooldown()
   {
     canEat = true;
+  }
+  void khoiphuctrangthai()
+  {
+    speed = speedStart;
+    ren.material.color = Color.white;
   }
   // hàm test xuống máu
   //private IEnumerator ApplyDamageOverTime()

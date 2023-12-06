@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 3884131263899152882}
   - component: {fileID: 2647492670830249471}
   - component: {fileID: -6501075136382815843}
-  - component: {fileID: -6182850912948673543}
   - component: {fileID: -3620627739218718155}
   - component: {fileID: 628038558107391257}
-  - component: {fileID: -8298733523386636450}
+  - component: {fileID: 1093302971992095041}
   m_Layer: 0
   m_Name: zombie_newspaper
   m_TagString: Untagged
@@ -134,23 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28063345, y: 0.70012736}
   m_EdgeRadius: 0
---- !u!114 &-6182850912948673543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4109030094381986060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63f951370178849aa6b96397fd7ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  health: 4
-  damage: 3
-  eatCooldown: 1
-  targetPlant: {fileID: 0}
 --- !u!50 &-3620627739218718155
 Rigidbody2D:
   serializedVersion: 4
@@ -199,7 +181,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-8298733523386636450
+--- !u!114 &1093302971992095041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,11 +190,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4109030094381986060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63f951370178849aa6b96397fd7ad8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c03fad5d5c790343807d353ecbe7191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
-  health: 8
+  speed: 1
+  health: 1212
   damage: 3
-  eatCooldown: 2
+  eatCooldown: 1
   targetPlant: {fileID: 0}

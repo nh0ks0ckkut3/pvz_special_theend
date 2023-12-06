@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 3884131263899152882}
   - component: {fileID: 2647492670830249471}
   - component: {fileID: -6501075136382815843}
-  - component: {fileID: -6182850912948673543}
   - component: {fileID: -3620627739218718155}
   - component: {fileID: 2126317924223753084}
-  - component: {fileID: -854332411110386956}
+  - component: {fileID: 3613258677075672431}
   m_Layer: 0
   m_Name: zombie_frag
   m_TagString: Untagged
@@ -83,7 +82,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.4399996, y: 8.021958}
+  m_Size: {x: 1.3833333, y: 1.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,7 +125,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.2769231, y: 1.1076924}
-    newSize: {x: 7.4399996, y: 8.021958}
+    newSize: {x: 1.3833333, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -134,23 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17747664, y: 0.6832764}
   m_EdgeRadius: 0
---- !u!114 &-6182850912948673543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4109030094381986060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63f951370178849aa6b96397fd7ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  health: 4
-  damage: 3
-  eatCooldown: 1
-  targetPlant: {fileID: 0}
 --- !u!50 &-3620627739218718155
 Rigidbody2D:
   serializedVersion: 4
@@ -199,7 +181,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-854332411110386956
+--- !u!114 &3613258677075672431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,11 +190,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4109030094381986060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63f951370178849aa6b96397fd7ad8, type: 3}
+  m_Script: {fileID: 11500000, guid: 887e7233331117c458b5ee2bd0efbe4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
-  health: 6
-  damage: 3
+  speed: 1
+  health: 100
+  damage: 1
   eatCooldown: 1
   targetPlant: {fileID: 0}

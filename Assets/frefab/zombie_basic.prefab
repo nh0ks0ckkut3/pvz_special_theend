@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3884131263899152882}
   - component: {fileID: 2647492670830249471}
   - component: {fileID: -6501075136382815843}
-  - component: {fileID: -6182850912948673543}
   - component: {fileID: -3620627739218718155}
   - component: {fileID: 8757473126677282079}
+  - component: {fileID: 9196504962842189950}
   m_Layer: 0
   m_Name: zombie_basic
   m_TagString: Untagged
@@ -133,23 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22985268, y: 0.6567012}
   m_EdgeRadius: 0
---- !u!114 &-6182850912948673543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4109030094381986060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c63f951370178849aa6b96397fd7ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.2
-  health: 4
-  damage: 3
-  eatCooldown: 1
-  targetPlant: {fileID: 0}
 --- !u!50 &-3620627739218718155
 Rigidbody2D:
   serializedVersion: 4
@@ -198,3 +181,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9196504962842189950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109030094381986060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887e7233331117c458b5ee2bd0efbe4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  health: 456
+  damage: 1
+  eatCooldown: 1
+  targetPlant: {fileID: 0}
