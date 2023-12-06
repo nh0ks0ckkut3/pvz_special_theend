@@ -11,7 +11,19 @@ public class ResetPassRequest
         this.email = email;
     }
 
+  public ResetPassRequest(string email) {
+    this.email = email;
+  }
+
+  public ResetPassRequest(string otp, string passNew)
+  {
+    this.otp = otp;
+    this.passNew = passNew;
+  }
+
     public string currentPass { get; set; }
     public string newPass { get; set; }
     public string email { get; set; }
+    public string otp { get; set; }
+    public string passNew {  get; set; }
 }

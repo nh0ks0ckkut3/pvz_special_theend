@@ -16,14 +16,14 @@ public class ResetForgetPassWord : MonoBehaviour
   {
     var email = edtEmail.text;
 
-    ResetForgetRequest resetForgetRequest = new ResetForgetRequest(email);
-    ResetPass(resetForgetRequest);
-    StartCoroutine(ResetPass(resetForgetRequest));
+    ResetPassRequest resetPassRequest = new ResetPassRequest(email);
+    ResetPass(resetPassRequest);
+    StartCoroutine(ResetPass(resetPassRequest));
   }
 
-  IEnumerator ResetPass(ResetForgetRequest resetForgetRequest)
+  IEnumerator ResetPass(ResetPassRequest resetPassRequest)
   {
-    string jsonStringRequest = JsonConvert.SerializeObject(resetForgetRequest);
+    string jsonStringRequest = JsonConvert.SerializeObject(resetPassRequest);
 
     var request = new UnityWebRequest("https://api-plantsvszombie-bason-694aafc26756.herokuapp.com/users/forgotPasswordAPP", "POST");
     byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonStringRequest);
@@ -43,12 +43,12 @@ public class ResetForgetPassWord : MonoBehaviour
       // trả về dữ liệu phản hồi của server
       var jsonString = request.downloadHandler.text.ToString();
       // chuyển đổi kiểu Json thành một đối tượng C#
-      ResetPassReponse resetPassReponse = JsonConvert.DeserializeObject<ResetPassReponse>(jsonString);
-      if (resetPassReponse.status != true)
+      ResetForgetRepone resetForgetRepone = JsonConvert.DeserializeObject<ResetForgetRepone>(jsonString);
+      if (resetForgetRepone.status != true)
       {
         //tài khoản không đúng
         txtError.text = "Gửi email không thành công";
-        Debug.Log(resetPassReponse.message);
+        Debug.Log(resetForgetRepone.status);
       }
       else
       {
@@ -56,7 +56,7 @@ public class ResetForgetPassWord : MonoBehaviour
         //SceneManager.LoadScene("");
         panelOTP.SetActive(true);
         paneSendEmail.SetActive(false);
-        Debug.Log(resetPassReponse.message);
+        Debug.Log(resetForgetRepone.status);
       }
     }
     request.Dispose();
